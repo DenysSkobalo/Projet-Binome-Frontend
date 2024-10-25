@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/contacts.css">
     <title>Contacts</title>
 </head>
 
@@ -40,7 +44,73 @@
             </div>
         </div>
     </nav>
-    <h1>Contacts</h1>
+    <div class="container">
+        <h1>Contacts</h1>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="first-name">Surname:</label>
+                <input type="text" id="first-name" name="first-name" maxlength="60" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" maxlength="60" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="theme1">Sex:</label>
+                <select id="theme1" name="theme1">
+                    <option value="">Select</option>
+                    <option value="option1">Female</option>
+                    <option value="option2">Male</option>
+                    <option value="option3">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="programming-languages">Programming languages you are proficient in:</label>
+                <div class="checkbox-block">
+                    <input type="checkbox" id="python" name="python" value="python">
+                    <label for="python">Python</label>
+                </div>
+                <div class="checkbox-block">
+                    <input type="checkbox" id="golang" name="golang" value="golang">
+                    <label for="golang">Golang</label>
+                </div>
+                <div class="checkbox-block">
+                    <input type="checkbox" id="javascript" name="javascript" value="javascript">
+                    <label for="javascript">JavaScript</label>
+                </div>
+                <div class="checkbox-block">
+                    <input type="checkbox" id="ccpp" name="ccpp" value="ccpp">
+                    <label for="ccpp">C/C++</label>
+                </div>
+                <div class="checkbox-block">
+                    <input type="checkbox" id="java" name="java" value="java">
+                    <label for="java">Java</label>
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments:</label>
+                    <textarea id="comments" name="comments" rows="5" cols="25" required></textarea>
+                </div>
+                <div class="block-btn">
+                    <div class="btn-clear">
+                        <button type="button" id="clear-form">Clear Form</butto§n>
+                    </div>
+                    <div class="btn-submit">
+                        <button type="submit" id="submit">Submit</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+    <footer>
+		<div class="container">
+			<p>&copy; 2024 AIHub. All Rights Reserved.</p>
+		</div>
+	</footer>
+    <script src="../js/contacts.js"></script>
+    <script src="../js/navbar.js"></script>
 </body>
 
 </html>

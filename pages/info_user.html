@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/navbar.css">
+	<link rel="stylesheet" href="../css/info_user.css">
+	<title>User Information</title>
+</head>
+
+<body>
+	<nav>
+		<div class="container">
+			<a href="index.html" class="logo">AIHub</a>
+			<ul>
+				<li>
+					<a href="index.html" class="nav-link" data-dropdown="dropdown-1">Home</a>
+				</li>
+				<li>
+					<a href="blog.html" class="nav-link" data-dropdown="dropdown-2">Blog</a>
+			</ul>
+		</div>
+
+		<div class="dropdown-container">
+			<div class="dropdown-content" id="dropdown-1">
+				<div class="column">
+					<a href="contacts.html">Contact</a>
+					<a href="developers.html">Developers</a>
+				</div>
+			</div>
+			<div class="dropdown-content" id="dropdown-2">
+				<div class="column">
+					<li><a href="nn.html">Neural Networks</a></li>
+					<li><a href="dl.html">Deep Learning</a></li>
+					<li><a href="ml.html">ML (Machine Learning)</a></li>
+				</div>
+			</div>
+			<div class="nav-search-container" id="search-dropdown">
+				<input type="text" id="search-input" placeholder="Search AIHub.com">
+				<p id="result"></p>
+			</div>
+		</div>
+	</nav>
+	<div class="info-container" style="text-align: center;">
+		<h1 class="title">User Information</h1>
+		<div class="info">
+			<p>First Name: <span id="first-name"></span></p>
+			<p>Last Name: <span id="last-name"></span></p>
+			<p>Password: <span id="password"></span></p>
+			<p>Comments: <span id="comments"></span></p>
+			<p>Languages: <span id="languages"></span></p>
+		</div>
+	</div>
+	<script src="../js/navbar.js"></script>
+	<script src="../js/info_user.js"></script>
+</body>
+
+</html>

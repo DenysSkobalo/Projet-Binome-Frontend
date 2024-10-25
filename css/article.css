@@ -6,13 +6,14 @@ html, body {
 	margin: 0 auto;
 	padding: 20px;
 	border-radius: 8px;
+	color: #333;
 }
 
 header {
 	padding: 20px;
 }
 
-h1, h2, p, li {
+h1, h2, h3, h4 p, li {
 	color: #333;
 }
 

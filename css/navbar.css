@@ -52,7 +52,7 @@ nav ul li a {
 	display: none;
 	flex-direction: column;
 	align-items: center;
-	padding: 20px 0;
+	padding: 10px 0;
 	z-index: 999;
 	animation: dropdownFadeIn 1s ease-in-out forwards;
 }
@@ -81,7 +81,6 @@ nav ul li:hover .dropdown-container {
 	display: flex;
 	justify-content: left;
 	flex-wrap: wrap;
-	gap: 20px;
 	padding: 10px 0;
 }
 
