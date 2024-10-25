@@ -1,0 +1,152 @@
+nav {
+	background-color: rgba(22, 22, 23);
+	padding: 12px 0;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+}
+
+nav .container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 15px;
+}
+
+nav .logo {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 20px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+nav ul li {
+	display: inline;
+	position: relative;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 0.9rem;
+	font-weight: 500;
+	padding: 15px 20px;
+}
+
+
+.dropdown-container {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	background-color: rgba(22, 22, 23);
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px 0;
+	z-index: 999;
+	animation: dropdownFadeIn 1s ease-in-out forwards;
+}
+
+nav ul li:hover .dropdown-container {
+	display: flex;
+	animation: dropdownFadeIn 1s ease-in-out;
+}
+
+@keyframes dropdownFadeIn {
+	from {
+			opacity: 0;
+			transform: translateY(-20px);
+	}
+	to {
+			opacity: 1;
+			transform: translateY(0);
+	}
+}
+
+.dropdown-content {
+	width: 90%;
+	max-width: 1200px;
+	height: 200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: left;
+	flex-wrap: wrap;
+	gap: 20px;
+	padding: 10px 0;
+}
+
+.dropdown-content .column {
+	flex: 1;
+	min-width: 200px;
+}
+
+.dropdown-content ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0 20px;
+	flex: 1;
+	min-width: 150px
+}
+
+.dropdown-content li {
+	list-style-type: none;
+}
+
+.dropdown-content a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 24px;
+	font-weight: 700;
+	padding: 10px 20px;
+	display: block;
+}
+
+.nav-search-container {
+	width: 50%;
+	height: 400px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 20px;
+	border-top: 1px solid #444;
+	background-color: rgba(22, 22, 23, 0.8);
+}
+
+.nav-search-container input[type="text"] {
+	padding: 10px 20px 12px 50px; 
+	width: 100%;
+	border: none;
+	border-radius: 4px;
+	color: #fff;
+	background-image: url('https://cdn-icons-png.flaticon.com/512/622/622669.png');
+	filter: brightness(0) invert(1);
+	background-color: transparent;
+	background-size: 25px;
+	background-position: 10px center;
+	background-repeat: no-repeat;
+	font-size: 28px;
+}
+
+.nav-search-container p {
+	color: #fff;
+}
+
+.nav-search-container input[type="text"]:focus {
+	outline: none; 
+	border: none;
+}
+
+.nav-search-container input[type="text"]::placeholder {
+	color: #aaa;
+	font-size: 28px;
+}

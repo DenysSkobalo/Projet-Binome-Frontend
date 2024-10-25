@@ -1,74 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Facial Recognition and the Role of AI">
-    <title>Welcome to Facial Recognition and AI</title>
-    <link rel="stylesheet" href="../css/reset.css">
-		<link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/index.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Facial Recognition and the Role of AI">
+	<title>Welcome to Facial Recognition and AI</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/index.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/navbar.css">
 </head>
+
 <body>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#" class="logo">FRecog</a></li>
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="articles.html" class="nav-link">Articles</a></li>
-                <li><a href="developers.html" class="nav-link">Developers</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+	<nav>
+		<div class="container">
+			<a href="#" class="logo">AIHub</a>
+			<ul>
+				<li>
+					<a href="#" class="nav-link" data-dropdown="dropdown-1">Home</a>
+				</li>
+				<li>
+					<a href="#" class="nav-link" data-dropdown="dropdown-2">Blog</a>
+			</ul>
+		</div>
 
-    <section class="hero-section">
-        <div class="container">
-            <h1>Welcome to Our AI-Powered Facial Recognition Hub!</h1>
-            <p>Unveil the future of technology. Discover how Artificial Intelligence is revolutionizing facial recognition systems across industries. Explore, learn, and be inspired!</p>
-            <a href="#learn-more" class="cta-button">Learn More</a>
-        </div>
-    </section>
+		<div class="dropdown-container">
+			<div class="dropdown-content" id="dropdown-1">
+				<div class="column">
+					<a href="#">About Us</a>
+					<a href="#">Contact</a>
+					<a href="#">Developers</a>
+				</div>
+			</div>
+			<div class="dropdown-content" id="dropdown-2">
+				<div class="column">
+					<li><a href="#">AI, but simple</a></li>
+					<li><a href="#">Deep Learning</a></li>
+					<li><a href="#">ML (Machine Learning)</a></li>
+				</div>
+			</div>
+			<div class="nav-search-container" id="search-dropdown">
+				<input type="text" id="search-input" placeholder="Search AIHub.com">
+				<p id="result"></p>
+			</div>
+		</div>
+	</nav>	
 
-    <section class="welcome-section" id="learn-more">
-        <div class="container">
-            <h2>Welcome to our journey into AI-driven facial recognition!</h2>
-            <p>Explore the cutting edge of AI technology and its impact on facial recognition systems. This platform is designed to guide you through the innovations, challenges, and real-world applications of AI in facial identification and security. Whether you're interested in the science behind these systems, their growing role in enhancing security measures, or their impact on privacy, you’re in the right place.</p>
-            <p>Here, you’ll discover how facial recognition technology is transforming industries, from unlocking devices with a glance to revolutionizing security in public spaces, retail, and healthcare. We offer in-depth insights into how this technology works, the algorithms that power it, and the ethical considerations that accompany its rise.</p>
-            <p>Our content is tailored for professionals, students, researchers, and curious minds alike, providing expert analysis, case studies, and news on the latest advancements. Get hands-on with tutorials, explore industry trends, and stay updated with the future of AI-driven security solutions.</p>
-        </div>
-    </section>
+	<section class="hero-section">
+		<div class="container">
+			<h1>Welcome to Our AI-Powered Facial Recognition Hub!</h1>
+			<p>Unveil the future of technology. Discover how Artificial Intelligence is revolutionizing facial recognition
+				systems across industries. Explore, learn, and be inspired!</p>
+			<a href="#learn-more" class="cta-button">Learn More</a>
+		</div>
+	</section>
 
-    <section class="key-features">
-        <h2>Key Features of Our Platform</h2>
-        <div class="features-container">
-            <div class="feature-item">
-                <h3>Comprehensive Insights</h3>
-                <p>Delve into detailed articles and tutorials that cover the latest trends and technologies in facial recognition.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Expert Analysis</h3>
-                <p>Gain access to expert opinions and case studies to better understand the implications of facial recognition technology.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Community Engagement (Soon)</h3>
-                <p>Join our community of learners and professionals to discuss and share insights on the evolving landscape of AI.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Latest News</h3>
-                <p>Stay updated with the latest advancements and breakthroughs in facial recognition technology.</p>
-            </div>
-        </div>
-    </section>
+	<section class="welcome-section" id="learn-more">
+		<div class="container">
+			<p>Explore the cutting edge of AI technology and its impact on facial recognition systems. This platform is
+				designed to guide you through the innovations, challenges, and real-world applications of AI in facial
+				identification and security. Whether you're interested in the science behind these systems, their growing role
+				in enhancing security measures, or their impact on privacy, you’re in the right place.</p>
+			<p>Here, you’ll discover how facial recognition technology is transforming industries, from unlocking devices with
+				a glance to revolutionizing security in public spaces, retail, and healthcare. We offer in-depth insights into
+				how this technology works, the algorithms that power it, and the ethical considerations that accompany its rise.
+			</p>
+			<p>Our content is tailored for professionals, students, researchers, and curious minds alike, providing expert
+				analysis, case studies, and news on the latest advancements. Get hands-on with tutorials, explore industry
+				trends, and stay updated with the future of AI-driven security solutions.</p>
+		</div>
+	</section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Facial Recognition and AI. All Rights Reserved.</p>
-        </div>
-    </footer>
+	<section class="key-features">
+		<h2>Key Features of Our Platform</h2>
+		<div class="features-container">
+			<div class="feature-item">
+				<h3>Comprehensive Insights</h3>
+				<p>Delve into detailed articles and tutorials that cover the latest trends and technologies in facial
+					recognition.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Expert Analysis</h3>
+				<p>Gain access to expert opinions and case studies to better understand the implications of facial recognition
+					technology.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Community Engagement (Soon)</h3>
+				<p>Join our community of learners and professionals to discuss and share insights on the evolving landscape of
+					AI.</p>
+			</div>
+			<div class="feature-item">
+				<h3>Latest News</h3>
+				<p>Stay updated with the latest advancements and breakthroughs in facial recognition technology.</p>
+			</div>
+		</div>
+	</section>
 
-    <script src="../js/search.js"></script>
+	<footer>
+		<div class="container">
+			<p>&copy; 2024 Facial Recognition and AI. All Rights Reserved.</p>
+		</div>
+	</footer>
+
+	<script src="../js/search.js"></script>
+	<script src="../js/navbar.js"></script>
 
 </body>
+
 </html>
