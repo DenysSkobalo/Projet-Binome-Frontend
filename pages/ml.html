@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Unsupervised Machine Learning: Clustering</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/navbar.css">
+	<link rel="stylesheet" href="../css/article.css">
+</head>
+
+<body>
+	<nav>
+		<div class="container">
+			<a href="index.html" class="logo">AIHub</a>
+			<ul>
+				<li>
+					<a href="index.html" class="nav-link" data-dropdown="dropdown-1">Home</a>
+				</li>
+				<li>
+					<a href="blog.html" class="nav-link" data-dropdown="dropdown-2">Blog</a>
+			</ul>
+		</div>
+
+		<div class="dropdown-container">
+			<div class="dropdown-content" id="dropdown-1">
+				<div class="column">
+					<a href="contacts.html">Contact</a>
+					<a href="developers.html">Developers</a>
+				</div>
+			</div>
+			<div class="dropdown-content" id="dropdown-2">
+				<div class="column">
+					<li><a href="nn.html">Neural Networks</a></li>
+					<li><a href="dl.html">Deep Learning</a></li>
+					<li><a href="ml.html">ML (Machine Learning)</a></li>
+				</div>
+			</div>
+			<div class="nav-search-container" id="search-dropdown">
+				<input type="text" id="search-input" placeholder="Search AIHub.com">
+				<p id="result"></p>
+			</div>
+		</div>
+	</nav>
+	<div class="content-container">
+		<header>
+			<h1>Unsupervised Learning: A Focus on Clustering</h1>
+		</header>
+
+		<article>
+			<section>
+				<h2>Categories of Machine Learning</h2>
+				<p>There are 3 main categories that make up machine learning as a whole:</p>
+				<ul>
+					<li>Supervised learning, where your training examples are labeled.</li>
+					<li>Unsupervised learning, where your training data is unlabeled.</li>
+					<li>Reinforcement learning, where an agent learns in an environment through trial and error—given feedback.
+					</li>
+				</ul>
+				<img src="../assets/images/ML/ML.png" alt="">
+				<p>In this issue, we’re going to focus on the middle (and unpopular) option: unsupervised learning.</p>
+				<br>
+			</section>
+
+			<section>
+				<h2>Unsupervised Learning Problems</h2>
+				<p>In particular, there are 2 main problems that unsupervised learning algorithms solve:</p>
+				<ul>
+					<li>Clustering (grouping ungrouped data)</li>
+					<li>Dimensionality reduction (lowering the number of features/dimensions of the data)</li>
+				</ul>
+				<p>We’ll focus on clustering, as it is the most used and popular form of unsupervised learning.</p>
+			</section>
+
+			<section>
+				<h2>Understanding Clustering</h2>
+				<p>Clustering deals with finding structure in a collection of unlabeled data. If the data were to be labeled, it
+					would be a supervised learning problem.</p>
+				<p>A loose definition of clustering could be “the process of organizing objects into groups whose members are
+					similar in some way.”</p>
+				<p>A cluster is therefore a grouping of objects or data points that are more similar to each other in the
+					cluster than to those in other clusters.</p>
+				<p>Some applications of clustering include:</p>
+				<ul>
+					<li>Market segmentation (dividing potential clients into certain groups)</li>
+					<li>Anomaly detection (discovering non-normal data points)</li>
+					<li>Image segmentation (image classification, recognition)</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Clustering Algorithms</h2>
+				<h3>1. Partitional Clustering</h3>
+				<p>Partitional clustering divides data objects into non-overlapping groups. In other words, no object can be a
+					member of more than one cluster, and every cluster must have at least one object.</p>
+				<img src="../assets/images/ML/ML2.avif" alt="">
+				<p>These types of algorithms require the user to specify a hyperparameter that represents the number of
+					clusters, usually denoted by the variable k.</p>
+				<p>Many partitional clustering algorithms work through an iterative process to assign subsets of data points
+					into k clusters. Two examples of partitional clustering algorithms are <strong>k-means</strong> and
+					<strong>k-medoids</strong>.
+				</p>
+				<h4>Strengths and Weaknesses:</h4>
+				<ul>
+					<li><strong>Strengths:</strong> They work well when clusters have a spherical shape; they’re scalable with
+						respect to algorithm complexity.</li>
+					<li><strong>Weaknesses:</strong> They’re not well suited for clusters with complex shapes and different sizes.
+					</li>
+				</ul>
+
+				<h3>2. Hierarchical Clustering</h3>
+				<p>Hierarchical clustering is a clustering algorithm that uses a hierarchy to group data. In this way, clusters
+					will have subclusters, and the groups will be overlapping.</p>
+				<img src="../assets/images/ML/ML3.avif" alt="">
+				<p>Hierarchical clustering algorithms generate a dendrogram that can be used for further analysis of the data.
+				</p>
+				<img src="../assets/images/ML/ML4.avif" alt="">
+				<p>There are 2 main types of hierarchical clustering:</p>
+				<ul>
+					<li><strong>Agglomerative clustering:</strong> This is the bottom-up approach. It merges the two points that
+						are the most similar (closest) until all points have been merged into a single cluster.</li>
+					<li><strong>Divisive clustering:</strong> This is the top-down approach. It starts with all points as one
+						cluster and splits the least similar clusters at each step until only single data points remain.</li>
+				</ul>
+				<h4>Linkages in Clustering:</h4>
+				<p>Especially in hierarchical clustering, there must be a way to decide how to assign data into their respective
+					clusters. We need a measure of distance between the clusters; we need to define what “close” is. We call this
+					measure the type of linkage, and choosing the right type of linkage can boost your performance.</p>
+				<img src="../assets/images/ML/ML5.avif" alt="">
+				<ul>
+					<li><strong>Single Linkage:</strong> Uses the minimum distance between any single point in the first cluster
+						and any single point in the second cluster. Tends to produce long, "chain-like" clusters. Sensitive to noise
+						and outliers.</li>
+					<li><strong>Complete Linkage:</strong> Uses the maximum distance between any single point in the first cluster
+						and any single point in the second cluster. Tends to produce more compact and spherical clusters.</li>
+					<li><strong>Average Linkage:</strong> Uses the average distance between all pairs of points, where one point
+						is from the first cluster and the other point is from the second cluster. Produces clusters that are more
+						balanced in size.</li>
+					<li><strong>Centroid Linkage:</strong> Uses the distance between the centroids (mean points) of the clusters.
+						Can produce clusters with irregular shapes. Sensitive to the mean values and can be influenced by outliers.
+					</li>
+				</ul>
+				<h4>Strengths and Weaknesses of Hierarchical Clustering:</h4>
+				<ul>
+					<li><strong>Strengths:</strong> Often reveals more details about the relationships between data points;
+						provides an interpretable dendrogram.</li>
+					<li><strong>Weaknesses:</strong> Computationally expensive; sensitive to noise and outliers.</li>
+				</ul>
+
+				<h3>3. Density-Based Clustering</h3>
+				<p>Density-based clustering determines cluster assignments based on the density of data points in a region.
+					Clusters are assigned where there are high densities of data points separated by low-density regions.</p>
+				<p>Unlike partitional clustering, this approach doesn’t require the user to specify the number of clusters.
+					Instead, there is a distance-based parameter that acts as a tunable threshold.</p>
+				<p>Examples of density-based clustering algorithms include <strong>DBSCAN</strong> and <strong>OPTICS</strong>.
+				</p>
+				<h4>Strengths and Weaknesses:</h4>
+				<ul>
+					<li><strong>Strengths:</strong> Excels at identifying clusters of non-spherical shapes; resistant to outliers.
+					</li>
+					<li><strong>Weaknesses:</strong> Not well suited for clustering in high-dimensional spaces; has trouble
+						identifying clusters of varying densities.</li>
+				</ul>
+				<img src="../assets/images/ML/ML6.avif" alt="">
+				<br>
+			</section>
+
+			<section>
+				<h2>Conclusion</h2>
+				<p>The different types of clustering algorithms provide various methods to approach the problem of grouping
+					unlabelled data. There are additional types of clustering algorithms, but we won’t go too deep into the other
+					ones as they are more advanced. We might add it to another issue, so be on the lookout!</p>
+			</section>
+		</article>
+	</div>
+	<footer>
+		<p>&copy; 2024 AIHub. All Rights Reserved.</p>
+	</footer>
+	<script src="../js/navbar.js"></script>
+	<script src="../js/search.js"></script>
+</body>
+
+</html>

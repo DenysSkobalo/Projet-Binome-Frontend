@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Neural Networks, Explained</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/navbar.css">
+	<link rel="stylesheet" href="../css/article.css">
+</head>
+
+<body>
+	<nav>
+		<div class="container">
+			<a href="index.html" class="logo">AIHub</a>
+			<ul>
+				<li>
+					<a href="index.html" class="nav-link" data-dropdown="dropdown-1">Home</a>
+				</li>
+				<li>
+					<a href="blog.html" class="nav-link" data-dropdown="dropdown-2">Blog</a>
+			</ul>
+		</div>
+
+		<div class="dropdown-container">
+			<div class="dropdown-content" id="dropdown-1">
+				<div class="column">
+					<a href="contacts.html">Contact</a>
+					<a href="developers.html">Developers</a>
+				</div>
+			</div>
+			<div class="dropdown-content" id="dropdown-2">
+				<div class="column">
+					<li><a href="nn.html">Neural Networks</a></li>
+					<li><a href="dl.html">Deep Learning</a></li>
+					<li><a href="ml.html">ML (Machine Learning)</a></li>
+				</div>
+			</div>
+			<div class="nav-search-container" id="search-dropdown">
+				<input type="text" id="search-input" placeholder="Search AIHub.com">
+				<p id="result"></p>
+			</div>
+		</div>
+	</nav>
+	<div class="content-container">
+		<header>
+			<h1>Neural Networks, Explained</h1>
+		</header>
+
+		<main>
+			<section class="intro">
+				<p>In the past decade, the best AI systems (such as image generators, or a machine translation service), have
+					been using a technique called deep learning.</p>
+				<p>Deep learning is an approach to AI using neural networks. So how did neural networks get so popular?</p>
+				<img src="../assets/images/NN/1.avif" alt="Neural Networks">
+			</section>
+
+			<section class="timeline">
+				<h2>A Simple Timeline of Neural Networks</h2>
+				<p>Neural networks were first proposed in 1944 by Warren McCullough and Walter Pitts, two University of Chicago
+					researchers.</p>
+				<p>Neural networks were a major area of research in both neuroscience and computer science but have had a rough
+					career: dying then resurging, then dying again, but finally resurging fueled by the increased processing power
+					of graphics cards.</p>
+			</section>
+
+			<section class="versatility">
+				<h2>Versatility of Neural Networks</h2>
+				<p>Neural networks are a very versatile tool. They are a means of learning how to perform a task by analyzing
+					training examples.</p>
+				<p>Let’s say you have a function. If you are given this function explicitly, then it is 100% guaranteed to
+					replicate the correct output, given any input.</p>
+				<img src="../assets/images/NN/2.avif" alt="Function Representation">
+			</section>
+
+			<section class="application">
+				<h2>Application in Medicine</h2>
+				<p>But what if you weren’t given the function at all, and instead, some data points and wanted to guess what the
+					function was shaped like?</p>
+				<p>For instance, there is no function that can tell you whether a tumor is malignant or benign. But using neural
+					networks, we can give it some data and tell it to make some sense of it.</p>
+				<img src="../assets/images/NN/3.avif" alt="Tumor Analysis">
+				<p>If we train it well, then it can predict whether a given tumor is malignant or benign with decent precision.
+				</p>
+			</section>
+		</main>
+	</div>
+	<footer>
+			<p>&copy; 2024 AIHub. All Rights Reserved.</p>
+	</footer>
+	<script src="../js/navbar.js"></script>
+	<script src="../js/search.js"></script>
+</body>
+
+</html>

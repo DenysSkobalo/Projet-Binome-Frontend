@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/reset.css">
+	<link rel="stylesheet" href="../css/navbar.css">
+	<link rel="stylesheet" href="../css/article.css">
+	<title>Multilayer Perceptrons: The Math Behind Deep Learning</title>
+</head>
+
+<body>
+	<nav>
+		<div class="container">
+			<a href="index.html" class="logo">AIHub</a>
+			<ul>
+				<li>
+					<a href="index.html" class="nav-link" data-dropdown="dropdown-1">Home</a>
+				</li>
+				<li>
+					<a href="blog.html" class="nav-link" data-dropdown="dropdown-2">Blog</a>
+			</ul>
+		</div>
+
+		<div class="dropdown-container">
+			<div class="dropdown-content" id="dropdown-1">
+				<div class="column">
+					<a href="contacts.html">Contact</a>
+					<a href="developers.html">Developers</a>
+				</div>
+			</div>
+			<div class="dropdown-content" id="dropdown-2">
+				<div class="column">
+					<li><a href="nn.html">Neural Networks</a></li>
+					<li><a href="dl.html">Deep Learning</a></li>
+					<li><a href="ml.html">ML (Machine Learning)</a></li>
+				</div>
+			</div>
+			<div class="nav-search-container" id="search-dropdown">
+				<input type="text" id="search-input" placeholder="Search AIHub.com">
+				<p id="result"></p>
+			</div>
+		</div>
+	</nav>
+	<div class="content-container">
+
+			<h1>Understanding Multilayer Perceptron (MLP) in Deep Learning</h1>
+
+			<p>In the field of deep learning, we solve machine learning problems while using Artificial Neural Networks
+				(ANNs).</p>
+
+			<p>One of the most common first learning steps in deep learning is to learn the Multilayer Perceptron (MLP), which
+				is a specific type of Artificial Neural Network (ANN).</p>
+
+			<p>An MLP is a type of feedforward artificial neural network, composed of at least three layers: an input layer,
+				one or more hidden layers, and an output layer.</p>
+
+			<p>If you are to say to someone that you understand deep learning, it is essential to understand how MLPs work.
+				They are the most common and basic when it comes to technicalities.</p>
+
+			<figure>
+				<img src="../assets/images/DL/1.avif" alt="Illustration of MLP structure">
+				<figcaption>Illustration of MLP structure</figcaption>
+			</figure>
+
+			<p>In our previous issues, we’ve covered a lot about propagation, nodes, activation functions, and gradients of
+				MLPs.</p>
+
+			<p>In this issue, we’re going to sum up the process and go into the math of it.</p>
+
+			<p>Before continuing, it is highly recommended to have some basic knowledge of linear algebra and calculus.</p>
+
+			<br>
+
+			<h2>Mathematics of MLPs</h2>
+
+			<p>From a mathematical perspective, MLPs are just a set of functions where each layer applies transformations to
+				an input to produce a corresponding output.</p>
+
+			<p>Starting with the structure, each MLP has at least an input layer, one or more hidden layers, and an output
+				layer.</p>
+
+			<p>If you have a neural network with <em>n</em> layers, counting both the input and output as a layer, you will
+				have <em>n-1</em> weight matrices.</p>
+
+			<p>Biases work the same way; if you have <em>n</em> layers, you will have <em>n-1</em> bias vectors.</p>
+
+			<p>For instance, if you have 3 layers (one input, one hidden, and one output), you will have one weight matrix
+				connecting the input to the hidden layer, and another connecting the hidden to the output layer.</p>
+
+			<p>The dimensions of the weight matrices are determined by the number of neurons in the incoming layer along with
+				the number of neurons in the outgoing layer.</p>
+
+			<p>Let’s take the weight matrix connecting the input to the hidden layer. If the input layer has 20 neurons, and
+				the hidden layer has 40 neurons, then the weight matrix will have a size of 40 × 20 (rows x columns).</p>
+
+			<figure>
+				<img src="../assets/images/DL/2.png" alt="Weight Matrix Example">
+				<figcaption>Weight matrix example</figcaption>
+			</figure>
+
+			<p>Here, the superscript is acting as an index for the weight matrix. Since this goes from input to hidden, it is
+				the first. Then, the second would be the hidden to the next layer.</p>
+
+			<p>The subscript denotes the column and row for easy indexing. In later examples, we will remove the comma.</p>
+
+			<p>However, in MLPs, biases work a little differently as they only have one column. An input layer will not have a
+				bias vector, they only start from the first hidden layer.</p>
+
+			<p>It will take the dimension of the number of nodes of the hidden layer x 1, and given a hidden layer with 5
+				nodes, it will look like this:</p>
+
+			<figure>
+				<img src="../assets/images/DL/3.png" class="img3" alt="Bias Vector Example">
+				<figcaption>Bias vector example</figcaption>
+			</figure>
+
+			<h2>Full Example</h2>
+
+			<p>We’ll do a full example with the Iris dataset now.</p>
+
+			<p>The Iris dataset is a classic dataset used in machine learning for classification tasks. It contains 150
+				samples of iris flowers from three species:</p>
+
+			<ul>
+				<li>Iris Setosa</li>
+				<li>Iris Versicolor</li>
+				<li>Iris Virginica</li>
+			</ul>
+
+			<p>Each sample has four features:</p>
+
+			<ul>
+				<li>Sepal Length (cm)</li>
+				<li>Sepal Width (cm)</li>
+				<li>Petal Length (cm)</li>
+				<li>Petal Width (cm)</li>
+			</ul>
+
+			<p>So the input matrix has a size of 150 × 4, and we will denote it as <em>x</em>.</p>
+
+			<p>The MLP we will be using will consist of one input layer, one hidden layer, and one output layer.</p>
+
+			<p>The input layer will have 4 neurons, allocating one neuron per feature (column), the hidden layer will have 6
+				neurons from arbitrary choice, and the output layer will have 3 neurons—one for each class.</p>
+
+			<figure>
+				<img src="../assets/images/DL/4.avif" alt="Network Structure Example">
+				<figcaption>Network structure example</figcaption>
+			</figure>
+
+			<p>The labels on the bottom correspond to the weights and biases the network has.</p>
+
+			<figure>
+				<img src="../assets/images/DL/5.avif" alt="Weights and Biases Example">
+				<figcaption>Weights and biases example</figcaption>
+			</figure>
+
+			<h2>Forward Pass</h2>
+
+			<p>Let’s go through a simple process of forward propagation. Suppose we have an iris flower with the following
+				features:</p>
+
+			<ul>
+				<li>Sepal Length (<em>x<sub>1</sub></em>): 5.1 cm</li>
+				<li>Sepal Width (<em>x<sub>2</sub></em>): 3.5 cm</li>
+				<li>Petal Length (<em>x<sub>3</sub></em>): 1.4 cm</li>
+				<li>Petal Width (<em>x<sub>4</sub></em>): 0.2 cm</li>
+			</ul>
+
+			<p>This would represent one row in the 150 examples.</p>
+
+			<p>First, we would compute the “pre-activation” (denoted as <em>z</em>) for the hidden layer; simply a matrix that
+				has the hidden layer’s mathematical operations done on it before applying an activation function.</p>
+
+			<figure>
+				<img src="../assets/images/DL/6.png" class="img6" alt="Pre-activation Example">
+				<figcaption>Pre-activation example</figcaption>
+			</figure>
+
+			<p>The formula shown below is for <em>z<sup>(1)</sup></em>, the vector being transformed from the input to the
+				hidden layer.</p>
+
+			<figure>
+				<img src="../assets/images/DL/7.png" class="img7" alt="Formula Example">
+				<figcaption>Formula for <em>z<sup>(1)</sup></em> calculation</figcaption>
+			</figure>
+
+			<p>Let’s go over a sample calculation for <em>z<sub>1</sub></em>.</p>
+			<p>Since weights and biases are initialized randomly, let’s take this matrix of weights and this bias vector</p>
+
+			<figure>
+				<img src="../assets/images/DL/8.png" alt="Sample Calculation">
+				<figcaption>Sample calculation for <em>z<sub>1</sub></em></figcaption>
+			</figure>
+			<figure>
+				<img src="../assets/images/DL/9.png" class="img9" alt="">
+			</figure>
+
+			<p>Then, the calculation for z1 is as follows: we take each element of the first row of the weight matrix and
+				multiply it with the corresponding input (mentioned prior: sepal length, width, etc.). We add the first row of
+				the bias vector to this weighted sum to obtain z1.</p>
+
+			<figure>
+				<img src="../assets/images/DL/9.avif" alt="Z Calculation">
+				<figcaption>Calculations for <em>z<sub>2</sub></em> to <em>z<sub>6</sub></em></figcaption>
+			</figure>
+
+
+			<p>We should repeat these steps for <em>z<sub>2</sub></em> to <em>z<sub>6</sub></em>:</p>
+
+			<figure>
+				<img src="../assets/images/DL/11.png" class="img11" alt="Z Calculation">
+				<figcaption>Calculations for <em>z<sub>2</sub></em> to <em>z<sub>6</sub></em></figcaption>
+			</figure>
+
+			<p>After computing the <em>z<sup>(1)</sup></em> vector, we’ll feed it through an activation function. For this
+				case, let’s use the sigmoid activation function. We will denote the activation vector as <em>a</em>.</p>
+
+	</div>
+	<footer>
+		<p>&copy; 2024 AIHub. All Rights Reserved.</p>
+	</footer>
+
+	<script src="../js/navbar.js"></script>
+	<script src="../js/search.js"></script>
+
+</html>
